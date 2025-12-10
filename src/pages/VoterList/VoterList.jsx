@@ -95,7 +95,7 @@ const VotersList = () => {
               <ChevronLeft onClick={() => navigate(-1)} className="w-6 h-6" />
             </button>
             <h1 className="text-xl font-bold truncate">
-              വോട്ടർ ലിസ്റ്റ് ({voteCount})
+              വോട്ടർ ലിസ്റ്റ് ({voteCount}) - ബൂത്ത് {boothDetails.boothNumber}
             </h1>
           </div>
 

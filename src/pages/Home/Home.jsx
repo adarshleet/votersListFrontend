@@ -45,6 +45,16 @@ const handleVoterListPage=()=>{
     navigate('/voters', { state: currentBooth })
 }
 
+const handlePoliticalStatusPage=()=>{
+    navigate('/politicalStatus', { state: currentBooth })
+}
+
+const handleVotingStatusPage=()=>{
+    navigate('/votingStatus', { state: currentBooth })
+}
+
+
+
   const currentBooth = boothData.find(b => b.boothNumber === activeBooth);
 
   return (
@@ -114,7 +124,7 @@ const handleVoterListPage=()=>{
           </div>
 
           {/* 2. Voters List Button */}
-          <button className="cursor-pointer w-full bg-[#116d44] text-white rounded-2xl p-5 mb-4 shadow-md flex items-center justify-between group active:scale-95 transition-transform"
+          <button className="cursor-pointer w-full bg-[#116d44] text-white rounded-2xl p-5 mb-3 shadow-md flex items-center justify-between group active:scale-95 transition-transform"
           onClick={()=>handleVoterListPage()}
           >
             <div className="flex items-center gap-4">
@@ -130,7 +140,8 @@ const handleVoterListPage=()=>{
           </button>
 
           {/* 3. Mark Status Button */}
-          <button className="w-full bg-[#116d44] text-white rounded-2xl p-5 shadow-md flex items-center justify-between group active:scale-95 transition-transform">
+          <button className="w-full bg-[#116d44] text-white rounded-2xl p-5 shadow-md flex items-center justify-between group active:scale-95 transition-transform mb-3"
+          onClick={()=>handlePoliticalStatusPage()}>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                 <Flag className="w-7 h-7  text-red-700" />
@@ -138,6 +149,19 @@ const handleVoterListPage=()=>{
               <div className="text-left">
                 <h4 className="text-lg font-bold">Mark Political Status</h4>
                 <p className="text-sm text-green-100 opacity-90">രാഷ്ട്രീയം അടയാളപ്പെടുത്തുക</p>
+              </div>
+            </div>
+            <ChevronRight className="w-6 h-6 opacity-70 group-hover:translate-x-1 transition-transform" />
+          </button>
+          <button className="w-full bg-[#116d44] text-white rounded-2xl p-5 shadow-md flex items-center justify-between group active:scale-95 transition-transform"
+          onClick={()=>handleVotingStatusPage()}>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                <Flag className="w-7 h-7  text-red-700" />
+              </div>
+              <div className="text-left">
+                <h4 className="text-lg font-bold">Voting Status</h4>
+                <p className="text-sm text-green-100 opacity-90">വോട്ടിംഗ് സ്റ്റാറ്റസ് </p>
               </div>
             </div>
             <ChevronRight className="w-6 h-6 opacity-70 group-hover:translate-x-1 transition-transform" />
